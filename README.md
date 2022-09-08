@@ -1,8 +1,27 @@
-Accessing the RENCI/NOAA Reanalysis Datasets
-========
+# Accessing the RENCI/NOAA Reanalysis Datasets
 
-Project THREDDS Data Server
---------
+## Getting started
+
+RENCI has developed a demonstration Jupyter/python notebook for accessing the Reanalysis data.  The notebook allows a user to extract timeseries from the Reanalysis for a range of years, at user specified points, and for several model variables.  The notebook and supporting python class and utilities is available at [git@github.com:RENCI/EDSReanalysis.git](git@github.com:RENCI/EDSReanalysis.git).
+
+To use this notebook, the user needs to: 
+1. clone the repository
+2. make a python environment with the requirements as specified in the requirements.txt file
+3. Install jupyter components in the new environment
+4. Launch jupyter
+5. Navigate to and launch the ReanalysisDataExtractorDemoInterface notebook. 
+6. The notebook contains cells that take User Input, extract the data, and provide download links to the resulting csv files.  The user can also investigate the results within the notebook, such as making a simple plot.  
+
+The core components of the notebook are in a utilities.py package that can be called directly by the user (i.e., outside of the notebook) for more detailed data extractions.  The **examples** directory contains information on how to do this.
+
+We also are planning to deploy the notebook via Binder for more direct and easier access to the demonstration.  
+
+### Currently available variables
+1. water level [m MSL]
+2. significant wave height [m]
+3. offset/correction [m]
+
+## Project THREDDS Data Server
 
 http://tds.renci.org/thredds/catalog/Reanalysis.html
 
@@ -23,5 +42,5 @@ File formats
 --------
 
 Accessing in:
-* Python
-* MATLAB
+* Python - See notebook details above. 
+* MATLAB - TBA
