@@ -1,8 +1,12 @@
-# Accessing the RENCI/NOAA Reanalysis Datasets
+# Accessing the RENCI/NOAA Reanalysis Datasets, V0.3, 8 Sep 2022
+The Reanalysis project generates ADCIRC model output in netCDF format on the NOAA HSOFS grid.  The files are served via a THREDDS Data Server (see below for details).  Each year is stored as a separate set of files, and extracting timeseries at user-specified locations across multiple years is cumbersome.  To faciliate easier access, RENCI has reorganized the netCDF files by "chunking" along the time dimension and transposing the data variables (nodesXtime instead of timeXnodes).  This substantially speeds up extraction of data along the time dimension. 
+
+RENCI has written a python utilities package that allows users to extract timeseries at (relatively) arbitrary points in the ADCIRC grid.  This package performs element searches to locate a point within the grid, extracts time series at the element vertices, and interpolates to the point.  The package hides the details of this process and provides high-level functions taht can be called directly.  This approach is detailed below.  
+
+RENCI has also developed a demonstration Jupyter/python notebook for accessing the Reanalysis data.  The notebook allows a user to extract timeseries from the Reanalysis by specifying a range of years, a set of lon/lat points, and for several model variables. 
 
 ## Getting started
-
-RENCI has developed a demonstration Jupyter/python notebook for accessing the Reanalysis data.  The notebook allows a user to extract timeseries from the Reanalysis for a range of years, at user specified points, and for several model variables.  The notebook and supporting python class and utilities is available at [git@github.com:RENCI/EDSReanalysis.git](git@github.com:RENCI/EDSReanalysis.git).
+ The notebook and supporting python class and utilities is available at [git@github.com:RENCI/EDSReanalysis.git](git@github.com:RENCI/EDSReanalysis.git).
 
 To use this notebook, the user needs to: 
 1. clone the repository
@@ -43,4 +47,5 @@ File formats
 
 Accessing in:
 * Python - See notebook details above. 
-* MATLAB - TBA
+* MATLAB - The same extraction process can be performed in MATLAB by leveraging the adcirc_util toolbox at git@github.com:BrianOBlanton/adcirc_util.git.  Examples will be described here in the near future. 
+
