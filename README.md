@@ -47,7 +47,7 @@ File formats
 
 Accessing in:
 * Python - See notebook details above. 
-* MATLAB - The same extraction process can be performed in MATLAB by leveraging the adcirc_util toolbox at git@github.com:BrianOBlanton/adcirc_util.git.   Clone the adcirc_util repo and add its path to the MATLAB path.  In the startup.m file, add the folloeing: 
+* MATLAB - The same extraction process can be performed in MATLAB by leveraging the [adcirc_util toolbox] (git@github.com:BrianOBlanton/adcirc_util.git).   Clone the adcirc_util repo and add its path to the MATLAB path.  In the startup.m file, add the folloeing: 
 
 ```
 global ADCIRC
@@ -56,6 +56,6 @@ addpath(ADCIRC)
 AddAdcircPaths(ADCIRC)
 ```
 
-The nctoolbox is also needed (git@github.com:nctoolbox/nctoolbox.git). 
+The [nctoolbox](git@github.com:nctoolbox/nctoolbox.git) is also needed to access the netCDF files on the remote TDS. 
 
-The file ReanalysisMatlabDemo.m describes how to extract data from the Reanalysis in  MATLAB.
+The file [ReanalysisMatlabDemo.m](https://github.com/RENCI/EDSReanalysis/blob/main/ReanalysisMatlabDemo.m) describes how to extract data from the Reanalysis in  MATLAB.  This file is also available in the EDSReanalysis repo. 
