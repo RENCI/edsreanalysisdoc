@@ -4,7 +4,9 @@ The Reanalysis project generates ADCIRC model output in netCDF format on the NOA
 
 RENCI has written a python utilities package that allows users to extract timeseries at (relatively) arbitrary points in the ADCIRC grid.  This package performs element searches to locate a point within the grid, extracts time series at the element vertices, and interpolates to the point.  The package hides the details of this process and provides high-level functions taht can be called directly.  This approach is detailed below.  
 
-RENCI has also developed a demonstration Jupyter/python notebook for accessing the Reanalysis data.  The notebook allows a user to extract timeseries from the Reanalysis by specifying a range of years, a set of lon/lat points, and for several model variables. 
+RENCI has developed a demonstration Jupyter/python notebook for accessing the Reanalysis data.  The notebook allows a user to extract timeseries from the Reanalysis by specifying a range of years, a set of lon/lat points, and one of several model variables.  To run the notebook, a jupyter instance is needed.  
+
+**We also are planning to deploy the notebook via Binder for more direct and easier access to the demonstration.**
 
 ## Getting started
  The notebook and supporting python class and utilities is available at [git@github.com:RENCI/EDSReanalysis.git](git@github.com:RENCI/EDSReanalysis.git).
@@ -19,7 +21,6 @@ To use this notebook, the user needs to:
 
 The core components of the notebook are in a utilities.py package that can be called directly by the user (i.e., outside of the notebook) for more detailed data extractions.  The **examples** directory contains information on how to do this.
 
-**We also are planning to deploy the notebook via Binder for more direct and easier access to the demonstration.**
 
 ### Currently available variables
 1. water level [m MSL]
@@ -48,7 +49,7 @@ File formats
 
 Access
 --------
-* Python - See notebook details above. 
+* Python - [See notebook details above](#getting-started). 
 * MATLAB - The same extraction process can be performed in MATLAB by leveraging the 
 [adcirc_util](https://github.com/BrianOBlanton/adcirc_util.git) toolbox.   Clone the adcirc_util repo and add its path to the MATLAB path.  In the startup.m file, add the folloeing: 
 
