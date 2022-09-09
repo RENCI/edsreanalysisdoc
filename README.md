@@ -1,4 +1,5 @@
 # Accessing the RENCI/NOAA Reanalysis Datasets, V0.3, 8 Sep 2022
+## Overview
 The Reanalysis project generates ADCIRC model output in netCDF format on the NOAA HSOFS grid.  The files are served via a THREDDS Data Server (see below for details).  Each year is stored as a separate set of files, and extracting timeseries at user-specified locations across multiple years is cumbersome.  To faciliate easier access, RENCI has reorganized the netCDF files by "chunking" along the time dimension and transposing the data variables (nodesXtime instead of timeXnodes).  This substantially speeds up extraction of data along the time dimension.  The reorganized files have different filenames from the default ADCIRC names.  E.g., fort.63.nc is renamed fort.63.d0.no-unlim.T.rc.nc.  The latter files are accessed in the notebook. 
 
 RENCI has written a python utilities package that allows users to extract timeseries at (relatively) arbitrary points in the ADCIRC grid.  This package performs element searches to locate a point within the grid, extracts time series at the element vertices, and interpolates to the point.  The package hides the details of this process and provides high-level functions taht can be called directly.  This approach is detailed below.  
@@ -18,7 +19,7 @@ To use this notebook, the user needs to:
 
 The core components of the notebook are in a utilities.py package that can be called directly by the user (i.e., outside of the notebook) for more detailed data extractions.  The **examples** directory contains information on how to do this.
 
-We also are planning to deploy the notebook via Binder for more direct and easier access to the demonstration.  
+**We also are planning to deploy the notebook via Binder for more direct and easier access to the demonstration.**
 
 ### Currently available variables
 1. water level [m MSL]
@@ -45,9 +46,11 @@ There two sub-catalogs.
 File formats
 --------
 
-Accessing in:
+Access
+--------
 * Python - See notebook details above. 
-* MATLAB - The same extraction process can be performed in MATLAB by leveraging the [adcirc_util toolbox] (git@github.com:BrianOBlanton/adcirc_util.git).   Clone the adcirc_util repo and add its path to the MATLAB path.  In the startup.m file, add the folloeing: 
+* MATLAB - The same extraction process can be performed in MATLAB by leveraging the 
+[adcirc_util](https://github.com/BrianOBlanton/adcirc_util.git) toolbox.   Clone the adcirc_util repo and add its path to the MATLAB path.  In the startup.m file, add the folloeing: 
 
 ```
 global ADCIRC
