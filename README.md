@@ -1,4 +1,9 @@
-# Accessing the RENCI/NOAA Reanalysis Datasets, V0.3, 8 Sep 2022
+# Accessing the RENCI/NOAA Reanalysis Datasets, V0.4, 12 Sep 2022
+
+Written by Jim M. McManus, Jeffrey L. Tilson, and Brian O. Blanton, RENCI
+
+Funded by NOAA
+
 ## Overview
 The Reanalysis project generates ADCIRC model output in netCDF format on the NOAA HSOFS grid.  The files are served via a THREDDS Data Server (see below for details).  Each year is stored as a separate set of files, and extracting timeseries at user-specified locations across multiple years is cumbersome.  To faciliate easier access, the netCDF files have been "chunked" along the time dimension and the data variables transposed (nodesXtime instead of timeXnodes).  This substantially speeds up extraction of data along the time dimension.  The reorganized files have different filenames from the default ADCIRC names.  E.g., fort.63.nc is renamed fort.63.d0.no-unlim.T.rc.nc.  The latter files are accessed in the notebook. 
 
