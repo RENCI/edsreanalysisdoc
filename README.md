@@ -17,8 +17,8 @@ The notebook can also be run on a local jupyter server by cloning the notebook r
  The notebook and supporting python class and utilities is available at [git@github.com:RENCI/EDSReanalysis.git](git@github.com:RENCI/EDSReanalysis.git).
 
 To use this notebook, the user needs to: 
-1. clone the repository
-2. make a python environment with the requirements as specified in the requirements.txt file
+1. Clone the repository
+2. Make a python environment with the requirements as specified in the requirements.txt file
 3. Install jupyter components in the new environment
 4. Launch jupyter
 5. Navigate to and launch the ReanalysisDataExtractorDemoInterface notebook. 
