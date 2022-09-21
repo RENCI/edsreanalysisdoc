@@ -28,9 +28,11 @@ The core components of the notebook are in a utilities.py package that can be ca
 
 
 ### Currently available variables
-1. water level [m MSL]
-2. significant wave height [m]
-3. offset/correction [m]
+1. Water Level [m MSL]
+2. Significant Wave Height - HSIGN [m]
+3. Wave Period - TPS [sec]
+4. Wave Direction - DIR [deg]
+5. Dynamic Water Level Correction [m]
 
 ## Project THREDDS Data Server
 
