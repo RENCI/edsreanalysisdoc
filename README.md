@@ -1,4 +1,4 @@
-# Accessing the RENCI/NOAA Reanalysis Datasets, V0.4, 12 Sep 2022
+# Accessing the RENCI/NOAA Reanalysis Datasets, V0.5, 21 Sep 2022
 
 Written by Jim M. McManus, Jeffrey L. Tilson, and Brian O. Blanton, RENCI
 
@@ -9,9 +9,9 @@ The Reanalysis project generates ADCIRC model output in netCDF format on the NOA
 
 RENCI has written a python utilities package that allows users to extract timeseries at (relatively) arbitrary points in the ADCIRC grid.  This package performs element searches to locate a point within the grid, extracts time series at the element vertices, and interpolates to the point.  The package hides the details of this process and provides high-level functions taht can be called directly.  This approach is detailed below.  
 
-RENCI has developed a demonstration Jupyter/python notebook for accessing the Reanalysis data.  The notebook allows a user to extract timeseries from the Reanalysis by specifying a range of years, a set of lon/lat points, and one of several model variables.  To run the notebook, a jupyter instance is needed.  
+RENCI has developed a demonstration Jupyter/python notebook for accessing the Reanalysis data.  The notebook allows a user to extract timeseries from the Reanalysis by specifying a range of years, a set of lon/lat points, and one of several model variables.  The notebook is hosted at mybinder.org, [https://tinyurl.com/RenciReanalysis](https://tinyurl.com/RenciReanalysis).
 
-**We also are planning to deploy the notebook via Binder for more direct and easier access to the demonstration.**
+The notebook can also be run on a local jupyter server by cloning the notebook repo and executing the notebook file. 
 
 ## Getting started
  The notebook and supporting python class and utilities is available at [git@github.com:RENCI/EDSReanalysis.git](git@github.com:RENCI/EDSReanalysis.git).
