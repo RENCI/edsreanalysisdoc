@@ -1,1 +1,3 @@
-remote_theme             : "pages-themes/cayman"
+remote_theme   : "pages-themes/cayman"
+title          : RENCI/NOAA Reanalysis Project Documentation
+show_downloads : false 
