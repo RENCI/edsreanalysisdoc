@@ -1,4 +1,4 @@
-# Accessing the RENCI/NOAA Reanalysis Datasets, V0.5, 21 Sep 2022
+# Accessing the RENCI/NOAA Reanalysis Datasets, V0.6, 03 Oct 2022
 
 Written by Jim M. McManus, Jeffrey L. Tilson, and Brian O. Blanton, RENCI
 
@@ -12,6 +12,9 @@ RENCI has written a python utilities package that allows users to extract timese
 RENCI has developed a demonstration Jupyter/python notebook for accessing the Reanalysis data.  The notebook allows a user to extract timeseries from the Reanalysis by specifying a range of years, a set of lon/lat points, and one of several model variables.  The notebook is hosted at mybinder.org, [https://tinyurl.com/RenciReanalysis](https://tinyurl.com/RenciReanalysis).
 
 The notebook can also be run on a local jupyter server by cloning the notebook repo and executing the notebook file. 
+
+## Release notes: 
+v0.6 fixes issue with missing values at year boundaries
 
 ## Getting started
  The notebook and supporting python class and utilities is available at [git@github.com:RENCI/EDSReanalysis.git](git@github.com:RENCI/EDSReanalysis.git).
