@@ -1,8 +1,13 @@
-# Accessing the RENCI/NOAA Reanalysis Datasets, V0.6, 03 Oct 2022
+<h1 style="text-align: center;">
+Accessing the RENCI/NOAA Reanalysis Datasets
+</h1>
+<h3 style="text-align: center;">
+V1.01, 13 Oct 2022
 
 Written by Jim M. McManus, Jeffrey L. Tilson, and Brian O. Blanton, RENCI
 
 Funded by NOAA
+</h3>
 
 ## Overview
 The Reanalysis project generates ADCIRC model output in netCDF format on the NOAA HSOFS grid.  The files are served via a THREDDS Data Server (see below for details).  Each year is stored as a separate set of files, and extracting timeseries at user-specified locations across multiple years is cumbersome.  To faciliate easier access, the netCDF files have been "chunked" along the time dimension and the data variables transposed (nodesXtime instead of timeXnodes).  This substantially speeds up extraction of data along the time dimension.  The reorganized files have different filenames from the default ADCIRC names.  E.g., fort.63.nc is renamed fort.63.d0.no-unlim.T.rc.nc.  The latter files are accessed in the notebook. 
@@ -14,7 +19,9 @@ RENCI has developed a demonstration Jupyter/python notebook for accessing the Re
 The notebook can also be run on a local jupyter server by cloning the notebook repo and executing the notebook file. 
 
 ## Release notes: 
-v0.6 fixes issue with missing values at year boundaries
+v0.9 Original draft release
+v1.0: First Complete dataset.
+v1.01: fixes python code issue with missing values at year boundaries
 
 ## Getting started
  The notebook and supporting python class and utilities is available at [git@github.com:RENCI/EDSReanalysis.git](git@github.com:RENCI/EDSReanalysis.git).
