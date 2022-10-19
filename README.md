@@ -20,7 +20,9 @@ The notebook can also be run on a local jupyter server by cloning the notebook r
 
 ## Release notes: 
 v0.9 Original draft release
+
 v1.0: First Complete dataset.
+
 v1.01: fixes python code issue with missing values at year boundaries
 
 ## Getting started
