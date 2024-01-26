@@ -2,28 +2,32 @@
 Accessing the RENCI/NOAA Reanalysis Datasets
 </h1>
 <h3 style="text-align: center;">
-V1.01, 13 Oct 2022
+V2.00
+ 
+10 Jan 2024
 
-Written by Jim M. McManus, Jeffrey L. Tilson, and Brian O. Blanton, RENCI
+Written by  Brian O. Blanton, Jim M. McManus, Jeffrey L. Tilson, RENCI
 
 Funded by NOAA
 </h3>
 
 ## Overview
-The Reanalysis project generates ADCIRC model output in netCDF format on the NOAA HSOFS grid.  The files are served via a THREDDS Data Server (see below for details).  Each year is stored as a separate set of files, and extracting timeseries at user-specified locations across multiple years is cumbersome.  To faciliate easier access, the netCDF files have been "chunked" along the time dimension and the data variables transposed (nodesXtime instead of timeXnodes).  This substantially speeds up extraction of data along the time dimension.  The reorganized files have different filenames from the default ADCIRC names.  E.g., fort.63.nc is renamed fort.63.d0.no-unlim.T.rc.nc.  The latter files are accessed in the notebook. 
+The Reanalysis project generates ADCIRC model output in netCDF format on the NOAA HSOFS grid.  The files are served via a THREDDS Data Server (see below).  Each year is stored as a separate set of files, and extracting timeseries at user-specified locations across multiple years is cumbersome.  To faciliate easier access, the netCDF files have been "chunked" along the time dimension and the data variables transposed (nodesXtime instead of timeXnodes).  This substantially speeds up extraction of data along the time dimension.  The reorganized files have different filenames from the default ADCIRC names.  E.g., fort.63.nc is renamed fort.63.d0.no-unlim.T.rc.nc.  The latter files are accessed in the companion demonstration notebook. 
 
 RENCI has written a python utilities package that allows users to extract timeseries at (relatively) arbitrary points in the ADCIRC grid.  This package performs element searches to locate a point within the grid, extracts time series at the element vertices, and interpolates to the point.  The package hides the details of this process and provides high-level functions taht can be called directly.  This approach is detailed below.  
 
 RENCI has developed a demonstration Jupyter/python notebook for accessing the Reanalysis data.  The notebook allows a user to extract timeseries from the Reanalysis by specifying a range of years, a set of lon/lat points, and one of several model variables.  The notebook is hosted at mybinder.org, [https://tinyurl.com/RenciReanalysis](https://tinyurl.com/RenciReanalysis).
 
-The notebook can also be run on a local jupyter server by cloning the notebook repo and executing the notebook file. 
+The notebook can also be run on a local jupyter server by cloning the notebook repo, making a suitable virtual environment, and executing the notebook file. 
 
 ## Release notes: 
-v0.9 Original draft release
+v2.00: release 2.0 of the reanalysis dataset.  Note that NOAA's CORA project considers this version 1.0.  The previous version is called 0.9.
+
+v1.01: fixes python code issue with missing values at year boundaries
 
 v1.0: First Complete dataset.
 
-v1.01: fixes python code issue with missing values at year boundaries
+v0.9 Original draft release
 
 ## Getting started
  The notebook and supporting python class and utilities is available at [git@github.com:RENCI/EDSReanalysis.git](git@github.com:RENCI/EDSReanalysis.git).
@@ -42,13 +46,13 @@ The core components of the notebook are in a utilities.py package that can be ca
 ### Currently available variables
 1. Water Level [m MSL]
 2. Significant Wave Height - HSIGN [m]
-3. Wave Period - TPS [sec]
-4. Wave Direction - DIR [deg]
+3. ~~Wave Period - TPS [sec]~~  **[not yet rechunked]**
+4. ~~Wave Direction - DIR [deg]~~ **[not yet rechunked]**
 5. Dynamic Water Level Correction [m]
 
 ## Project THREDDS Data Server
 
-http://tds.renci.org/thredds/catalog/Reanalysis.html
+https://tdsres.apps.renci.org/thredds/catalog/ReanalysisV2/ADCIRC/ERA5/hsofs.V2/catalog.html
 
 There two sub-catalogs.  
 
@@ -60,7 +64,7 @@ There two sub-catalogs.
 
     The **DynWatLevCor/ERA5/hsofs** directory contains the offset surface files used to force the posterior simulations.  These files contains daily averaged error surfaces on the ADCIRC grid nodes (specifically, on the HSOFS grid).  wget can also be used to download these files if needed.
 
-2. **ADCIRC**: The **ADCIRC/ERA5/hsofs** directory contains the model output for each simulation year, for both the *prior* and *posterior*.  The posterior is named "YYYY-post".   
+2. **ADCIRC**: The **ADCIRC/ERA5/hsofs.V2** directory contains the model output for each simulation year, for both the *prior* and *posterior*.  The posterior is named "YYYY-post".   
 
 
 File formats
